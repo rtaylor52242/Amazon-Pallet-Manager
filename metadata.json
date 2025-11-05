@@ -1,0 +1,5 @@
+{
+  "name": "Amazon Pallet & Inventory Manager",
+  "description": "A comprehensive web application for managing Amazon pallet purchases, inventory processing, and reselling operations with integrated AI-powered product research.",
+  "requestFramePermissions": []
+}
