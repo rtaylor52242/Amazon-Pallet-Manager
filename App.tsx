@@ -10,6 +10,7 @@ import ItemList from './components/ItemList';
 import Modal from './components/Modal';
 import PalletForm from './components/PalletForm';
 import ItemForm from './components/ItemForm';
+import HelpModal from './components/HelpModal';
 import { Box, Package, DollarSign, CheckCircle } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
 
     const [isPalletModalOpen, setPalletModalOpen] = useState(false);
     const [isItemModalOpen, setItemModalOpen] = useState(false);
+    const [isHelpModalOpen, setHelpModalOpen] = useState(false);
     const [editingPallet, setEditingPallet] = useState<Pallet | null>(null);
     const [editingItem, setEditingItem] = useState<Item | null>(null);
 
@@ -60,7 +62,7 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans">
-            <Header />
+            <Header onHelpClick={() => setHelpModalOpen(true)} />
             <main className="p-4 sm:p-6 lg:p-8">
                 {view === 'dashboard' ? (
                     <>
@@ -126,6 +128,8 @@ const App: React.FC = () => {
                     />
                 </Modal>
             )}
+
+            <HelpModal isOpen={isHelpModalOpen} onClose={() => setHelpModalOpen(false)} />
         </div>
     );
 };
